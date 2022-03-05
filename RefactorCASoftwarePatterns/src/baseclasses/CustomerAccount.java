@@ -23,6 +23,25 @@ public class CustomerAccount  {
 		this.transactionList = transactionList;
 	}
 	
+	
+	//Conceptually, setBalance method doesn't really make sense: 
+	
+	//instead I will have lodge and withdraw methods
+	
+	//withdraw method
+	public void withdraw(double amount) {
+		if(amount > getBalance()) {
+			System.out.println("This withdrawal cannot be made due to insufficient funds");
+		}
+		
+		balance = balance - amount;
+	}
+	
+	//deposit method
+	public void deposit(double amount) {
+		balance = balance + amount;
+	}
+	
 	//Accessor methods
 	
 	public String getNumber()
@@ -31,7 +50,6 @@ public class CustomerAccount  {
 	}
 	
 	
-
 	
 	public double getBalance()
 	{
