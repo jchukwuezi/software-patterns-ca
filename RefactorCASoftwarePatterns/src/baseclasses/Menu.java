@@ -160,8 +160,9 @@ public class Menu extends JFrame{
 								
 								
 							    ArrayList<CustomerAccount> accounts = new ArrayList<CustomerAccount> ();
-										Customer customer = new Customer(PPS, surname, firstName, DOB, CustomerID, password, accounts);
-											
+							    		//creating customer object
+							    		Person aPerson = new Person(PPS, firstName, surname, DOB);
+										Customer customer = new Customer(aPerson, CustomerID, password, accounts);	
 										customerList.add(customer);
 									
 										JOptionPane.showMessageDialog(f, "CustomerID = " + CustomerID +"\n Password = " + password  ,"Customer created.",  JOptionPane.INFORMATION_MESSAGE);

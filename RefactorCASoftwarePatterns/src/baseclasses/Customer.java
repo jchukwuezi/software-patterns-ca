@@ -9,7 +9,7 @@ public class Customer {
 	String DOB ="";
 	String customerID = "";
 	String password = "";
-	
+	Person person;
 	ArrayList<CustomerAccount> accounts = new ArrayList<CustomerAccount> ();
 
 	//Blank constructor
@@ -33,6 +33,13 @@ public class Customer {
 		this.DOB = DOB;
 		this.customerID = customerID;
 		this.password = password;;
+		this.accounts = accounts;
+	}
+	
+	public Customer(Person aPerson, String customerID, String password, ArrayList<CustomerAccount> accounts) {
+		this.person = aPerson;
+		this.customerID = customerID;
+		this.password = password;
 		this.accounts = accounts;
 	}
 	
