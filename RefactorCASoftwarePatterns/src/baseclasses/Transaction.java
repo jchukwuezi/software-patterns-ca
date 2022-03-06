@@ -1,13 +1,13 @@
 package baseclasses;
 
-public class AccountTransaction {
+public class Transaction {
 
 	String date;
 	String type;
 	double amount;
 	
 	//Blank constructor
-	public AccountTransaction()
+	public Transaction()
 	{
 		this.date = "";
 		this.type = "";	
@@ -16,7 +16,7 @@ public class AccountTransaction {
 	}
 	
 	//Constructor with details
-	public AccountTransaction(String date, String type, double amount)
+	public Transaction(String date, String type, double amount)
 	{
 		this.date = date;
 		this.type = type;

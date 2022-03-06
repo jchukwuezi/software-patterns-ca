@@ -11,7 +11,7 @@ public DepositAccount()
 	this.interestRate = 0;
 }
 
-public DepositAccount(double interestRate, String number, double balance, ArrayList<AccountTransaction> transactionList)
+public DepositAccount(double interestRate, String number, double balance, ArrayList<Transaction> transactionList)
 {
 	super(number, balance, transactionList);	
 	this.interestRate = interestRate;

@@ -1131,7 +1131,7 @@ public class Menu extends JFrame{
 				    	boolean valid = true;
 				    	double balance = 0;
 				    	String number = String.valueOf("C" + (customerList.indexOf(customer)+1) * 10 + (customer.getAccounts().size()+1));//this simple algorithm generates the account number
-				    	ArrayList<AccountTransaction> transactionList = new ArrayList<AccountTransaction>();
+				    	ArrayList<Transaction> transactionList = new ArrayList<Transaction>();
 				    	int randomPIN = (int)(Math.random()*9000)+1000;
 				           String pin = String.valueOf(randomPIN);
 				    
@@ -1152,7 +1152,7 @@ public class Menu extends JFrame{
 				    	
 				    	double balance = 0, interest = 0;
 				    	String number = String.valueOf("D" + (customerList.indexOf(customer)+1) * 10 + (customer.getAccounts().size()+1));//this simple algorithm generates the account number
-				    	ArrayList<AccountTransaction> transactionList = new ArrayList<AccountTransaction>();
+				    	ArrayList<Transaction> transactionList = new ArrayList<Transaction>();
 				        	
 				    	DepositAccount deposit = new DepositAccount(interest, number, balance, transactionList);
 				    	
@@ -1512,7 +1512,7 @@ public class Menu extends JFrame{
 				
 				
 				
-				AccountTransaction transaction = new AccountTransaction(date2, type, amount);
+				Transaction transaction = new Transaction(date2, type, amount);
 				acc.getTransactionList().add(transaction);
 				
 			 JOptionPane.showMessageDialog(f, depositAmount + euro + " added do you account!" ,"Lodgement",  JOptionPane.INFORMATION_MESSAGE);
@@ -1611,7 +1611,7 @@ public class Menu extends JFrame{
 					double amount = withdrawAmount;
 					
 		
-					AccountTransaction transaction = new AccountTransaction(date2, type, amount);
+					Transaction transaction = new Transaction(date2, type, amount);
 					acc.getTransactionList().add(transaction);
 				 
 				 

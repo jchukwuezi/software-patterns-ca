@@ -12,7 +12,7 @@ public CurrentAccount()
 	
 }
 
-public CurrentAccount(ATMCard atm, String number, double balance, ArrayList<AccountTransaction> transactionList)
+public CurrentAccount(ATMCard atm, String number, double balance, ArrayList<Transaction> transactionList)
 {
 	super(number, balance, transactionList);	
 	this.atm = atm;

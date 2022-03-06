@@ -5,7 +5,7 @@ public class CustomerAccount  {
    
 	String number;
 	double balance;
-	ArrayList<AccountTransaction> transactionList = new ArrayList<AccountTransaction>();
+	ArrayList<Transaction> transactionList = new ArrayList<Transaction>();
 
 	//Blank Constructor
 	public CustomerAccount()
@@ -16,7 +16,7 @@ public class CustomerAccount  {
 	}
 	
 	//Constructor with Details
-	public CustomerAccount(String number, double balance, ArrayList<AccountTransaction> transactionList)
+	public CustomerAccount(String number, double balance, ArrayList<Transaction> transactionList)
 	{
 		this.number = number;
 		this.balance = balance;
