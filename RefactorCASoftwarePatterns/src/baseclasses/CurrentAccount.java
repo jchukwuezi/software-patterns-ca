@@ -3,29 +3,29 @@ import java.util.ArrayList;
 
 public class CurrentAccount extends CustomerAccount 
 {
-	ATMCard atm;
+	ATMCard card;
 	
 public CurrentAccount()
 {
 	super();
-	this.atm = null;
+	this.card = null;
 	
 }
 
 public CurrentAccount(ATMCard atm, String number, double balance, ArrayList<Transaction> transactionList)
 {
 	super(number, balance, transactionList);	
-	this.atm = atm;
+	this.card = atm;
 }
 
 public ATMCard getAtm()
 {
-	return this.atm;
+	return this.card;
 }
 
 public void setAtm(ATMCard atm)
 {
-	this.atm = atm;
+	this.card = atm;
 }
 
 }

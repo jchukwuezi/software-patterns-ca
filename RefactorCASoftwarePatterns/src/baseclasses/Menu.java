@@ -873,7 +873,8 @@ public class Menu extends JFrame{
 
 				JScrollPane scrollPane = new JScrollPane(textArea);
 				textPanel.add(scrollPane);
-
+				
+				/*
 				for (int a = 0; a < customerList.size(); a++)//For each customer, for each account, it displays each transaction.
 				{
 					for (int b = 0; b < customerList.get(a).getAccounts().size(); b ++ )
@@ -888,8 +889,11 @@ public class Menu extends JFrame{
 						}				
 					}				
 				}
-
-
+				*/
+				
+				//put the loop above into a method called summarize account which would return the 
+				
+				textArea.append(summarizeAccounts(customerList));
 
 
 				textPanel.add(textArea);
@@ -1646,6 +1650,22 @@ public class Menu extends JFrame{
 			return false;  
 		}  
 		return true;  
+	}
+	
+	//method to get every transaction in each of the accounts
+	public String summarizeAccounts(ArrayList<Customer> listOfCustomers) {
+		String accountSummary = "";
+		
+		for(int i= 0; i<listOfCustomers.size(); i++) {
+			for(int j = 0; j<listOfCustomers.get(i).getAccounts().size(); j++) {
+				acc = customerList.get(i).getAccounts().get(j);
+				for(int k=0; k<listOfCustomers.get(i).getAccounts().get(j).getTransactionList().size(); k++) {
+					accountSummary = acc.getTransactionList().get(k).toString();
+				}
+			}
+		}
+		
+		return accountSummary;
 	}
 }
 
