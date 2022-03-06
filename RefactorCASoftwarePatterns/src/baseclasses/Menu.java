@@ -1443,7 +1443,7 @@ public class Menu extends JFrame{
 			public void actionPerformed(ActionEvent ae) {
 			boolean loop = true;
 			boolean on = true;
-			double balance = 0;
+			double depositAmount = 0;
 
 			if(acc instanceof CurrentAccount)
 			{
@@ -1489,7 +1489,7 @@ public class Menu extends JFrame{
 				if(isNumeric(balanceTest))
 				{
 					
-					balance = Double.parseDouble(balanceTest);
+					depositAmount = Double.parseDouble(balanceTest);
 					loop = false;
 					
 					
@@ -1501,12 +1501,13 @@ public class Menu extends JFrame{
 				
 			
 			String euro = "\u20ac";
-			 acc.setBalance(acc.getBalance() + balance);
+			 //acc.setBalance(acc.getBalance() + depositAmount);
+			acc.deposit(depositAmount);
 			// String date = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 			 Date date = new Date();
 			 String date2 = date.toString();
 			 String type = "Lodgement";
-				double amount = balance;
+				double amount = depositAmount;
 				
 				
 				
@@ -1514,7 +1515,7 @@ public class Menu extends JFrame{
 				AccountTransaction transaction = new AccountTransaction(date2, type, amount);
 				acc.getTransactionList().add(transaction);
 				
-			 JOptionPane.showMessageDialog(f, balance + euro + " added do you account!" ,"Lodgement",  JOptionPane.INFORMATION_MESSAGE);
+			 JOptionPane.showMessageDialog(f, depositAmount + euro + " added do you account!" ,"Lodgement",  JOptionPane.INFORMATION_MESSAGE);
 			 JOptionPane.showMessageDialog(f, "New balance = " + acc.getBalance() + euro ,"Lodgement",  JOptionPane.INFORMATION_MESSAGE);
 			}
 
@@ -1525,7 +1526,7 @@ public class Menu extends JFrame{
 			public void actionPerformed(ActionEvent ae) {
 				boolean loop = true;
 				boolean on = true;
-				double withdraw = 0;
+				double withdrawAmount = 0;
 
 				if(acc instanceof CurrentAccount)
 				{
@@ -1576,7 +1577,7 @@ public class Menu extends JFrame{
 					if(isNumeric(balanceTest))
 					{
 						
-						withdraw = Double.parseDouble(balanceTest);
+						withdrawAmount = Double.parseDouble(balanceTest);
 						loop = false;
 						
 						
@@ -1586,26 +1587,28 @@ public class Menu extends JFrame{
 					{
 						JOptionPane.showMessageDialog(f, "You must enter a numerical value!" ,"Oops!",  JOptionPane.INFORMATION_MESSAGE);
 					}
-					if(withdraw > 500)
+					if(withdrawAmount > 500)
 					{
 						JOptionPane.showMessageDialog(f, "500 is the maximum you can withdraw at a time." ,"Oops!",  JOptionPane.INFORMATION_MESSAGE);
-						withdraw = 0;
+						withdrawAmount = 0;
 					}
-					if(withdraw > acc.getBalance())
+					if(withdrawAmount > acc.getBalance())
 					{
 						JOptionPane.showMessageDialog(f, "Insufficient funds." ,"Oops!",  JOptionPane.INFORMATION_MESSAGE);
-						withdraw = 0;					
+						withdrawAmount = 0;					
 					}
 				
 				String euro = "\u20ac";
-				 acc.setBalance(acc.getBalance()-withdraw);
+				//this will be removed as setting balance from the client doesn't make sense conceptually
+				 //acc.setBalance(acc.getBalance()-withdrawAmount);
+				 acc.withdraw(withdrawAmount);
 				   //recording transaction:
 			//		String date = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 				 Date date = new Date();
 				 String date2 = date.toString();
 				 
 				 String type = "Withdraw";
-					double amount = withdraw;
+					double amount = withdrawAmount;
 					
 		
 					AccountTransaction transaction = new AccountTransaction(date2, type, amount);
@@ -1613,7 +1616,7 @@ public class Menu extends JFrame{
 				 
 				 
 					
-				 JOptionPane.showMessageDialog(f, withdraw + euro + " withdrawn." ,"Withdraw",  JOptionPane.INFORMATION_MESSAGE);
+				 JOptionPane.showMessageDialog(f, withdrawAmount + euro + " withdrawn." ,"Withdraw",  JOptionPane.INFORMATION_MESSAGE);
 				 JOptionPane.showMessageDialog(f, "New balance = " + acc.getBalance() + euro ,"Withdraw",  JOptionPane.INFORMATION_MESSAGE);
 				}
 				 
