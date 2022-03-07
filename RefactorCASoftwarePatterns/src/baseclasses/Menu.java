@@ -276,7 +276,7 @@ public class Menu extends JFrame{
 							}					    	
 						}
 
-						if(found == false)
+						if(found)
 						{
 							int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
 							if (reply == JOptionPane.YES_OPTION) {
@@ -436,7 +436,7 @@ public class Menu extends JFrame{
 							}					    	
 						}
 
-						if(found == false)
+						if(found)
 						{
 							int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
 							if (reply == JOptionPane.YES_OPTION) {
@@ -581,7 +581,7 @@ public class Menu extends JFrame{
 							}					    	
 						}
 
-						if(found == false)
+						if(found)
 						{
 							int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
 							if (reply == JOptionPane.YES_OPTION) {
@@ -731,7 +731,7 @@ public class Menu extends JFrame{
 							}					    	
 						}
 
-						if(found == false)
+						if(found)
 						{
 							int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
 							if (reply == JOptionPane.YES_OPTION) {
@@ -1107,7 +1107,7 @@ public class Menu extends JFrame{
 							}					    	
 						}
 
-						if(found == false)
+						if(found)
 						{
 							int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
 							if (reply == JOptionPane.YES_OPTION) {
@@ -1198,7 +1198,7 @@ public class Menu extends JFrame{
 							}					    	
 						}
 
-						if(found == false)
+						if(!found)
 						{
 							int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
 							if (reply == JOptionPane.YES_OPTION) {
@@ -1250,7 +1250,7 @@ public class Menu extends JFrame{
 						}					    	
 					}
 
-					if(found == false)
+					if(!found)
 					{
 						int reply  = JOptionPane.showConfirmDialog(null, null, "User not found. Try again?", JOptionPane.YES_NO_OPTION);
 						if (reply == JOptionPane.YES_OPTION) {
